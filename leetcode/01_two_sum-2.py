@@ -1,11 +1,11 @@
 class Solution:
     def twoSum(self, nums, target):
-        ndict = {}
+        h = {}
         for i, a in enumerate(nums):
-            if(target-a in ndict):
-                return (ndict[target-a], i)
+            if(target-a in h):
+                return (h[target-a], i)
             else:
-                ndict[a] = i
+                h[a] = i
 
 
 a = Solution.twoSum(None, [2, 3, 5, 6, 11, 15, 17], 16)

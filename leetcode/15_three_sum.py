@@ -3,13 +3,12 @@ class Solution:
         lis = []
         for i, a in enumerate(nums):
             for j, b in enumerate(nums):
-                z = (a, b, a + b)
                 if i != j:
-                    lis.append(z)
+                    lis.append( (a, b, a + b, i, j) )
         x = set()
         for l, val in enumerate(nums):
             for k, tup in enumerate(lis):
-                if val + tup[2] == 0:
+                if val + tup[2] == 0 and l != tup[3] and l!=tup[4] :
                     z = (tup[0], tup[1], val)
                     tpl = tuple(sorted(z))
                     x.add(tpl)

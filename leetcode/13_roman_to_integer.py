@@ -42,11 +42,11 @@ class Solution:
         return res
 
 
-a = Solution.romanToInt(None, 'MCMXCIV')
+a = Solution.romanToInt(None, 'MCCXLIII')
 print('===')
 print(a)
 
-# IV = 4
+# IV = 4MCCXLIII
 # IX = 9
 # XL
 # XC
