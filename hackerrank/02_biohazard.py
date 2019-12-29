@@ -107,16 +107,16 @@ def bh3(m, al, po):
 
 # r = bh2(4, [1, 2], [3, 4])
 # print(r)
-#r = bh3(5, [1, 2], [3, 5])
-#print(r)
+# r = bh3(5, [1, 2], [3, 5])
+# print(r)
 
 
-def bioHazard(m, al, po):
-    #f = [[0] * m for i in range(m)]
+def bioHazard4(m, al, po):
+    # f = [[0] * m for i in range(m)]
     f = []
     for i in range(m):
-        #print(i)
-        f.append([0]*m)
+        # print(i)
+        f.append([0] * m)
         for j in range(m):
             if i >= j:
                 f[i][j] = 1
@@ -125,9 +125,21 @@ def bioHazard(m, al, po):
         big = max(al[k], po[k])
         small = min(al[k], po[k])
         for j in range(0, small):
-            for i in range(big-1, m):
+            for i in range(big - 1, m):
                 f[i][j] = 0
     return sum(map(sum, f))
 
-r = bioHazard(5, [1, 2], [3, 5])
+
+def bioHazard4(m, al, po):
+    f = {}
+    for k, a in enumerate(al):
+        big = max(al[k], po[k])
+        small = min(al[k], po[k])
+        for j in range(0, small):
+            for i in range(big - 1, m):
+                f[str(i) + str(j)] = 1
+    return int((m + 1) * m / 2 - len(f))
+
+
+r = bioHazard4(5, [1, 2], [3, 5])
 print(r)
