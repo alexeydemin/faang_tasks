@@ -72,13 +72,15 @@ def entries_num(n, digit):
 
 def bh2(m, al, po):
     pers = int((m + 1) * m / 2)
-    for i, a in enumerate(al):
-        big_digit = max(al[i], po[i])
-        small_digit = min(al[i], po[i])
-        sub = (m - big_digit + 1) * small_digit
+    for i in range(len(al)):
+        big = max(al[i], po[i])
+        small = min(al[i], po[i])
+        sub = (m - big + 1) * small
         pers -= sub
-    return pers
+    return pers +1
 
+r = bh2(5, [1, 2], [3, 5])
+print(r)
 
 def bh3(m, al, po):
     f = [[0] * m for i in range(m)]
@@ -132,7 +134,7 @@ def bioHazard4(m, al, po):
 
 def bioHazard4(m, al, po):
     f = {}
-    for k, a in enumerate(al):
+    for k in range(len(al)):
         big = max(al[k], po[k])
         small = min(al[k], po[k])
         for j in range(0, small):
@@ -141,5 +143,5 @@ def bioHazard4(m, al, po):
     return int((m + 1) * m / 2 - len(f))
 
 
-r = bioHazard4(5, [1, 2], [3, 5])
-print(r)
+#r = bioHazard4(5, [1, 2], [3, 5])
+#print(r)
