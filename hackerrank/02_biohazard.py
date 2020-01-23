@@ -5,30 +5,58 @@ def bioHazard_old(n, allergic, poisonous):
     count = 0
     a = []
     for i in range(1, n + 1):
+        print(i)
         # print('=== step' + str(i) + '===')
         temp = []
+        #print(len(a))
         for elem in a:
-            if is_compatible(elem, i, rules):
+            # if is_compatible(elem, i, rules):
+            #     # print('Y')
+            # else:
+            #     # print('N')
+            #if len(elem) == 1:
+            #    continue
+            if len(elem) == 1 or is_compatible(elem, i, rules):
                 temp.append(elem + [i])
+                print('A')
                 count += 1
         a = temp
         a.append([i])
+        print('B')
         count += 1
-        print(a)
+        #print(a)
         # print('=== end step' + str(i) + '===')
     return count
 
 
 def is_compatible(elem, i, rules):
+    print("launched")
     if i not in rules:
+        #print('one')
         return True
     for al in rules[i]:
         if al in elem:
+            #print('two')
             return False
+    #print('three')
     return True
 
 
-def get_rules(allergic, poisonous):
+def get_rules(al, po):
+    res = {}
+    for i in range(len(al)):
+        if po[i] in res:
+            res[po[i]].append(al[i])
+        else:
+            res[po[i]] = [al[i]]
+
+        if al[i] in res:
+            res[al[i]].append(po[i])
+        else:
+            res[al[i]] = [po[i]]
+    return res
+
+def get_rules_old(allergic, poisonous):
     res = {}
     for i, p in enumerate(poisonous):
         if p in res:
@@ -79,8 +107,8 @@ def bh2(m, al, po):
         pers -= sub
     return pers +1
 
-r = bh2(5, [1, 2], [3, 5])
-print(r)
+#r = bh2(5, [1, 2], [3, 5])
+#print(r)
 
 def bh3(m, al, po):
     f = [[0] * m for i in range(m)]
@@ -143,5 +171,8 @@ def bioHazard4(m, al, po):
     return int((m + 1) * m / 2 - len(f))
 
 
-#r = bioHazard4(5, [1, 2], [3, 5])
-#print(r)
+#r = bioHazard_old(5, [1, 2], [3, 5])
+r = bioHazard_old(8, [2,3,4,3], [8,5,6,4])
+print(r)
+#print(get_rules([1, 2], [3, 5]))
+#print(get_rules_old([1, 2], [3, 5]))
