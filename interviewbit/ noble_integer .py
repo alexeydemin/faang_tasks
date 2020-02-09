@@ -7,7 +7,7 @@ class Solution:
         le = len(A)
         for i, a in enumerate(A):
             if a == 0 and i == le - 1:
-            print('spec')
+            #print('spec')
                 return a
             if a == le - i - 1 and a != A[i + 1]:
                 return a
