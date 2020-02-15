@@ -30,9 +30,10 @@ class Solution:
         for i, val in enumerate(A):
             if i < 3:
                 continue
-            # case 1: 0>=2 and 3>=1
-            # case 2  2=>4 and 3>=1 and 0+4>=2 and 1+5=>3
-            # case 3  1=3 and 0+4 >=2
+            #case 1: 0>=2 and 3>=1
+            #case 2  2=>4 and 3>=1 and 0+4>=2 and 1+5=>3 A[-2]
+            #case 3  1=3 and 0+4 >=2
+
             case1 = A[i - 3] >= A[i - 1] and A[i] >= A[i - 2]
             case2 = i >= 5 and A[i - 3] >= A[i - 1] and A[i - 2] >= A[i - 4] and A[i - 5] + A[i - 1] >= A[i - 3] and A[i - 4] + A[i] >= A[i - 2]
             case3 = i >= 4 and A[i - 3] == A[i - 1] and A[i - 4] + A[i] >= A[i - 2]
@@ -40,7 +41,6 @@ class Solution:
             if case1 or case2 or case3:
                 return i
         return -1
-
 
 B = [
    [1, 3, 2, 5, 4, 4, 6, 3, 2],  # -> 6
