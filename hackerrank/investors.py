@@ -1,15 +1,14 @@
 def countMeetings(arrival, departure):
-    _min = min(arrival)
-    _max = max(departure)
-    per = []
+    a = sorted(arrival)
+    d = sorted(departure)
+    _min = a[0]
+    _max = d[-1]
     r = 0
-    for k, a in enumerate(arrival):
-        per.append((arrival[k], departure[k]))
     for i in range(_min, _max+1):
-        for j, t in enumerate(per):
-            if t[0] <= i <= t[1]:
+        for j, t in enumerate(a):
+            if a[j] <= i <= d[j]:
                 r+=1
-                del(per[j])
+                del a[j], d[j]
                 break
     return r
 
