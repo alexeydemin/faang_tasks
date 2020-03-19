@@ -1,3 +1,5 @@
+import statistics
+
 class Solution:
     def seats(self, A):
         # get current seats indexes
@@ -11,7 +13,8 @@ class Solution:
         if n == 0:
             return 0
         else:
-            med = round(sum(seats) / n)
+            med = int(statistics.median(seats))
+
 
         # get future seats indexes
         future = range(
@@ -35,5 +38,6 @@ class Solution:
 # 012345678901234
 
 # r = Solution.seats(None, '.x.x.x...x')
-r = Solution.seats(None, 'xxx')
+#r = Solution.seats(None, '....x..xx...x..')
+r = Solution.seats(None, '.xxx')
 print(r)
