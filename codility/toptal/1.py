@@ -26,5 +26,11 @@ def solution(S, K):
 
 #print(compress()) #A3B4C
 
-print(solution('AABBBCCDDCCC', 3))
+#print(solution('AABBBCCDDCCC', 3))
 #print(solution('trigonome', 3))
+print(solution('AABCDEEFGGGG', 4))
+print(solution('AAAAABBBAAAAACD', 3))
+print(solution('AAAAABCDEEEEEEEFGKKKKK', 3))
+print(solution('AABCDEEFGGGG', 4))
+print(solution('AABCDEEFGGGG', 4))
+print(solution('AAAAAAAAAABCDE', 4))

@@ -14,4 +14,4 @@ def solve(a):
     return abs(res[0] - res[1])
 
 
-print solve(aa)
+print (solve(aa))
