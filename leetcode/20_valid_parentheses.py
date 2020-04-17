@@ -5,11 +5,16 @@ class Solution:
             if s in ['(', '[', '{']:
                 m.append(s)
                 continue
+
             if len(m) == 0:
                 return False
             else:
                 last = m[-1]
-            if s == ')' and last == '(' or s == ']' and last == '[' or s == '}' and last == '{':
+
+
+            if s == ')' and last == '(' or \
+               s == ']' and last == '[' or \
+               s == '}' and last == '{':
                 m.pop()
             else:
                 return False
