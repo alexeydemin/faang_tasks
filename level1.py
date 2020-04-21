@@ -3,7 +3,7 @@ def answer(s):
 
     dct = {}
     for k, ch in enumerate(alp):
-        dct[ch] = len(alp)-k-1
+        dct[ch] = len(alp) - k - 1
 
     res = ''
     for ch in s:
@@ -15,5 +15,5 @@ def answer(s):
     return res
 
 
-print answer("wrw blf hvv ozhg mrtsg'h vkrhlwv?")
-print answer("Yvzs! I xzm'g yvorvev Lzmxv olhg srh qly zg gsv xlolmb!!")
+print(answer("wrw blf hvv ozhg mrtsg'h vkrhlwv?"))
+print(answer("Yvzs! I xzm'g yvorvev Lzmxv olhg srh qly zg gsv xlolmb!!"))

@@ -20,5 +20,5 @@ class Solution:
             Solution.getNum(self, x, y + 1)
 
 
-r = Solution.uniquePaths(None, 1, 3000)
+r = Solution.uniquePaths(None, 30, 30)
 print(r)
