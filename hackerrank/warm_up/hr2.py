@@ -26,7 +26,7 @@ aa = [5, 6, 7]
     #b = map(int, raw_input().rstrip().split())
 bb = [3, 6, 10]
 result = solve(aa, bb)
-print ' '.join(map(str, result))
+print (' '.join(map(str, result)))
 
     #fptr.write(' '.join(map(str, result)))
     #fptr.write('\n')

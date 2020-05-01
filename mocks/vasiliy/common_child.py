@@ -45,12 +45,12 @@ print("correct: 1")
 # harry
 # sally
 
-#  A B C
+#   A B C
 # A 1 1
 # A 1 1
 # C     2
 
-#  H A R R Y    S A L L Y
+#   H A R R Y    S A L L Y
 # S 0 0 0 0 0  H 0 0 0 0 0
 # A 0 1        A 0 1 1
 # L            R
