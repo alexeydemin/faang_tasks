@@ -59,6 +59,14 @@ def num_path(m, n):  # m,n - ints
 
     return dp[m - 1]
 
+def uniquePaths2(m: int, n: int) -> int:
+    paths = [1]*n #O(n)
+    for i in range(1, m):
+        for j in range(1, n):
+            paths[j] += paths[j-1] # O(m*n)
+    return paths[n-1]
+
+
 #r = Solution.uniquePaths(None, 2, 3)
-r = count_paths(3, 3)
+r = uniquePaths2(7, 3)
 print(r)
