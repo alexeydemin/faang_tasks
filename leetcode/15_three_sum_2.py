@@ -3,8 +3,8 @@ class Solution:
         nums = sorted(nums)
         x = set()
         for i, first in enumerate(nums):
-            start_i = i+1
-            end_i = len(nums)-1
+            start_i = i + 1
+            end_i = len(nums) - 1
             while start_i < end_i:
                 sum = first + nums[start_i] + nums[end_i]
                 if sum < 0:
@@ -20,6 +20,7 @@ class Solution:
             ll = list(el)
             ret.append(ll)
         return x
+
 
 g = Solution.threeSum(None, [-1, 0, 1, 2, -1, -4])
 print(g)
